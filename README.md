@@ -11,7 +11,7 @@ A URL Query string Encoder and Parser based on go.
 - Encode from go structure to URL Query string
 
 ## Keywords
-x-www-form-urlencoded Query Encoder URL-Query Http-Query go
+x-www-form-urlencoded Query Encoder URL-Query HTTP-Query go
 
 ## Feature
 - Support full go structure Translation

@@ -1,26 +1,26 @@
 ### 简介
-使用Go语言实现的URL Query字符串编码器和解码器。写好后才发现官方已有实现的[querystring](https://github.com/google/go-querystring)，但只实现了编码器，没有解码器，且只支持顶层数据结构为结构体，实现上不算特别完善。
+使用Go语言实现的 URL Query 字符串编码器和解码器。写好后才发现官方已有实现的 [querystring](https://github.com/google/go-querystring)，但只实现了编码器，没有解码器，且只支持顶层数据结构为结构体，实现上不算特别完善。
 
-- 将URL Query编码的字符串转换为Go数据结构
-- 将Go数据结构转换为URL Query编码的字符串
+- 将 URL Query 编码的字符串转换为Go数据结构
+- 将 Go 数据结构转换为 URL Query 编码的字符串
 
 ### 关键词
-x-www-form-urlencoded Query Encoder URL-Query Http-Query go
+x-www-form-urlencoded Query Encoder URL-Query HTTP-Query go
 
 ### 特性
-- 支持丰富的Go数据结构互转：
+- 支持丰富的 Go 数据结构互转：
     - 基础数据类型: 有符号整型[8,16,32,64] 无符号整形[8,16,32,64] 字符串 布尔值 浮点型[32,64] 字节 字面量
     - 复合数据类型: 数组 切片 哈希 结构体
     - 嵌套结构体
 - 支持顶层的数据结构为数组 切片 哈希，不仅仅是结构体
-- 支持自定义的URL-Query Encode编码规则，支持全局、局部设置方式，支持默认规则 [example](example/withoption.go)
-- 支持自定义的键名映射规则（结构体Tag示例：`query:"name"`）[example](example/simple.go)
+- 支持自定义的 URL-Query Encode 编码规则，支持全局、局部设置方式，支持默认规则 [example](example/withoption.go)
+- 支持自定义的键名映射规则（结构体 Ta g示例：`query:"name"`）[example](example/simple.go)
 - 支持自定义的值转换函数 [example](example/converter.go)
 - 支持开启或者关闭忽略结构体零值编码（默认开启） [example](example/withoption.go)
 
 
 ### 快速入门
-更多查看[example目录](example/withoption.go)
+更多查看 [example目录](example/withoption.go)
 
 ```golang
 package main
@@ -69,9 +69,9 @@ func main() {
 ```
 
 ### 注意事项
-- 针对Map数据类型，Marshal可以支持map[基础数据类型]基础数据类型|复合数据类型，Unmarshal只能支持map[基础数据类型]基础数据类型
-- 结构体零值忽略编码默认开启，可以通过[Option](example/withoption.go)关闭此功能
-- 字节实际上是uint8，字面量是int32，所以编码后其实是整型，解码的时候也需要接收的是整型
+- 针对 map 数据类型，Marsha l可以支 持 map[基础数据类型] 基础数据类型|复合数据类型，Unmarshal 只能支 持 map[基础数据类型] 基础数据类型
+- 结构体零值忽略编码默认开启，可以通过 [Option](example/withoption.go) 关闭此功能
+- 字节实际上是 uint8，字面量是 int32，所以编码后其实是整型，解码的时候也需要接收的是整型
 
 ### 许可
 MIT
